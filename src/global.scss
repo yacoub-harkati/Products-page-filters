@@ -1,0 +1,148 @@
+:root {
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.App {
+	display: flex;
+	font-weight: 300;
+	min-height: 100vh;
+
+	.open-btn {
+		display: none;
+	}
+	.sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 1em;
+		flex: 1;
+		background-color: #333333;
+
+		.search-input {
+			display: flex;
+			gap: 1em;
+			background-color: #333333;
+
+			.input {
+				width: 100%;
+				border-radius: 0.3em;
+				padding: 1em;
+				font-size: 1rem;
+				background-color: #242424;
+				color: inherit;
+				border: none;
+			}
+
+			.input:focus {
+				outline: none;
+			}
+
+			p {
+				cursor: pointer;
+			}
+		}
+
+		.filters {
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			background-color: #333333;
+			gap: 1em;
+			.title {
+				margin: 0;
+				margin-top: 1em;
+				font-size: 1.5rem;
+			}
+
+			.cats {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+
+				.cat {
+					margin-left: 1em;
+					cursor: pointer;
+				}
+			}
+
+			.range-slider {
+				margin-top: 1em;
+				width: 100%;
+			}
+
+			.range-price {
+				margin: 0;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		.sidebar {
+			flex: 0;
+		}
+		.open-btn {
+			display: block;
+		}
+	}
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	padding: 2em;
+	flex: 4;
+
+	.product {
+		width: 300px;
+
+		.product-img {
+			background-color: #fff;
+			width: 100%;
+			height: 300px;
+			border-radius: 1rem;
+			object-fit: contain;
+		}
+
+		.product-img:hover {
+			object-fit: cover;
+		}
+	}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0px 1000px #242424 inset;
+	-webkit-text-fill-color: rgba(255, 255, 255, 0.87);
+}
